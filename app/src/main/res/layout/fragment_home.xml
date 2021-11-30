@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="16dp"
+  tools:context=".ui.screen.HomeFragment">
+  
+  <TextView
+    android:id="@+id/tv_home_app_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/app_name"
+    android:textColor="@color/black"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+  
+  <TextView
+    android:id="@+id/tv_home_welcome"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/welcome_text"
+    android:textColor="@color/black"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+  
+  <TextView
+    android:id="@+id/tv_home_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/admin_text"
+    android:textColor="@color/black"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="@+id/tv_home_welcome"
+    app:layout_constraintTop_toBottomOf="@+id/tv_home_welcome" />
+  
+  <TextView
+    android:id="@+id/tv_home_latest_news"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="64dp"
+    android:text="@string/latest_news_text"
+    android:textColor="@color/black"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_home_name"
+    app:layout_constraintVertical_bias="0.0" />
+  
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rv_home_card_blog"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="8dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@+id/tv_home_name"
+    app:layout_constraintStart_toStartOf="@+id/tv_home_latest_news"
+    app:layout_constraintTop_toBottomOf="@+id/tv_home_latest_news"
+    tools:listitem="@layout/card_blog" />
+  
+  <ImageButton
+    android:id="@+id/ibtn_home_add"
+    android:layout_width="75dp"
+    android:layout_height="75dp"
+    android:layout_marginBottom="48dp"
+    android:backgroundTint="@color/transparent"
+    android:contentDescription="@string/add_text"
+    android:scaleType="fitCenter"
+    android:src="@drawable/ic_baseline_add_circle_24"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:tint="@color/black"
+    tools:ignore="SpeakableTextPresentCheck" />
+  
+  <ImageButton
+    android:id="@+id/ibtn_home_logout"
+    android:layout_width="75dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:backgroundTint="@color/transparent"
+    android:contentDescription="@string/logout_text"
+    android:src="@drawable/ic_logout"
+    app:layout_constraintStart_toStartOf="@+id/tv_home_app_name"
+    app:layout_constraintTop_toBottomOf="@+id/tv_home_app_name"
+    tools:ignore="SpeakableTextPresentCheck" />
+  
+  <ProgressBar
+    android:id="@+id/pb_home_blog"
+    style="@android:style/Widget.Holo.ProgressBar.Large"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tv_home_latest_news" />
+</androidx.constraintlayout.widget.ConstraintLayout>

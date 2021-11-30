@@ -1,0 +1,30 @@
+<resources>
+  <string name="app_name">Dagger Bikin Pusing</string>
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="login_text">Login</string>
+  <string name="username_text">Username</string>
+  <string name="password_text">Password</string>
+  <string name="logout_text">Logout</string>
+  <string name="enigma_news_form_text">Enigma News Form</string>
+  <string name="content_text">Content</string>
+  <string name="author_text">Author</string>
+  <string name="title_text">Title</string>
+  <string name="save_text">Save</string>
+  <string name="cancel_text">Cancel</string>
+  <string name="welcome_text">Selamat Datang</string>
+  <string name="admin_text">Admin</string>
+  <string name="latest_news_text">Berita Terbaru</string>
+  <string name="blog_text">Blog</string>
+  <string name="update_text">Update</string>
+  <string name="delete_text">Delete</string>
+  <string name="back_text">Back</string>
+  <string name="breaking_news_text">Breaking News</string>
+  <string name="add_text">Add</string>
+  <string name="reset_text">Reset</string>
+  <string name="yes_text">Yes</string>
+  <string name="home_text">Home</string>
+  <string name="profile_text">Profile</string>
+  <string name="error_occurred">Error Occurred</string>
+  <string name="ok_text">OK</string>
+  <string name="something_wrong">Something Wrong…</string>
+</resources>
