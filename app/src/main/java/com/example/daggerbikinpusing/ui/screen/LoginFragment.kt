@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -15,12 +14,12 @@ import com.example.daggerbikinpusing.data.viewmodel.LoginViewModel
 import com.example.daggerbikinpusing.databinding.FragmentLoginBinding
 import com.example.daggerbikinpusing.util.AppResource
 import com.example.daggerbikinpusing.util.SessionManager
-import com.example.daggerbikinpusing.util.appComponent
 import com.example.daggerbikinpusing.util.hideKeyboard
 import com.google.android.material.snackbar.Snackbar
+import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class LoginFragment : Fragment() {
+class LoginFragment : DaggerFragment() {
   private var _binding: FragmentLoginBinding? = null
   private val binding get() = _binding!!
   
@@ -47,8 +46,9 @@ class LoginFragment : Fragment() {
   
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    
-    requireActivity().appComponent.inject(this@LoginFragment)
+
+//    requireActivity().appComponent.inject(this@LoginFragment)
+//    AndroidSupportInjection.inject(this@LoginFragment)
     
     loginViewModel = ViewModelProvider(requireActivity(), object : ViewModelProvider.Factory {
       override fun <T : ViewModel> create(modelClass: Class<T>): T {

@@ -2,6 +2,7 @@ package com.example.daggerbikinpusing.di
 
 import android.app.Application
 import android.content.Context
+import android.content.SharedPreferences
 import com.example.daggerbikinpusing.R
 import com.example.daggerbikinpusing.data.api.ApiService
 import com.example.daggerbikinpusing.data.api.AuthInterceptors
@@ -19,12 +20,13 @@ class AppModule(private val application: Application) {
   
   @Provides
   @Singleton
-  fun provideSessionManager(): SessionManager = SessionManager(
-    application.getSharedPreferences(
-      R.string.app_name.toString(),
-      Context.MODE_PRIVATE
-    )
-  )
+  fun provideSharedPreference(): SharedPreferences =
+    application.getSharedPreferences(R.string.app_name.toString(), Context.MODE_PRIVATE)
+  
+  @Provides
+  @Singleton
+  fun provideSessionManager(sharedPreferences: SharedPreferences): SessionManager =
+    SessionManager(sharedPreferences)
   
   @Provides
   @Singleton

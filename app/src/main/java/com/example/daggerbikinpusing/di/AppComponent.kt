@@ -1,13 +1,12 @@
 package com.example.daggerbikinpusing.di
 
-import com.example.daggerbikinpusing.ui.activity.MainActivity
-import com.example.daggerbikinpusing.ui.screen.LoginFragment
+import com.example.daggerbikinpusing.util.BaseApplication
 import dagger.Component
+import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
 
-@Component(modules = [AppModule::class, LoginModule::class])
+@Component(modules = [AppModule::class, LoginModule::class, ActivityModule::class, AndroidInjectionModule::class])
 @Singleton
 interface AppComponent {
-  fun inject(mainActivity: MainActivity)
-  fun inject(loginFragment: LoginFragment)
+  fun inject(application: BaseApplication)
 }
