@@ -1,15 +1,15 @@
-package com.example.daggerbikinpusing.di
+package com.example.daggerbikinpusing.di.module
 
 import com.example.daggerbikinpusing.data.repository.LoginRepository
 import com.example.daggerbikinpusing.data.repository.LoginRepositoryImpl
+import com.example.daggerbikinpusing.di.annotation.ActivityScope
 import dagger.Binds
 import dagger.Module
-import javax.inject.Singleton
 
 @Module
 abstract class LoginModule {
   
   @Binds
-  @Singleton
+  @ActivityScope
   abstract fun bindsLoginRepository(loginRepositoryImpl: LoginRepositoryImpl): LoginRepository
 }

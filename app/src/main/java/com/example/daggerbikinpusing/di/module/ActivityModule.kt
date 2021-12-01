@@ -1,4 +1,4 @@
-package com.example.daggerbikinpusing.di
+package com.example.daggerbikinpusing.di.module
 
 import com.example.daggerbikinpusing.ui.activity.MainActivity
 import com.example.daggerbikinpusing.ui.screen.LoginFragment
