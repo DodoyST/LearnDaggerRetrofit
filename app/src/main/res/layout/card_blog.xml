@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_margin="8dp"
+  app:cardBackgroundColor="#F1F1F1"
+  app:cardCornerRadius="8dp">
+  
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:orientation="vertical"
+      android:paddingHorizontal="16dp">
+      
+      <TextView
+        android:id="@+id/tv_card_blog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_text"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+      
+      <TextView
+        android:id="@+id/tv_card_blog_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/author_text"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+    </LinearLayout>
+    
+    <ImageView
+      android:id="@+id/iv_card_blog"
+      android:layout_width="150dp"
+      android:layout_height="75dp"
+      android:layout_weight="1"
+      android:contentDescription="@string/blog_text"
+      android:paddingHorizontal="8dp"
+      app:srcCompat="@drawable/ic_baseline_burst_mode_100" />
+  </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

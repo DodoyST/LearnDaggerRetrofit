@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.daggerbikinpusing.R
 import com.example.daggerbikinpusing.data.model.Login
-import com.example.daggerbikinpusing.data.repository.LoginRepository
+import com.example.daggerbikinpusing.data.repository.LoginRepositoryImpl
 import com.example.daggerbikinpusing.data.viewmodel.LoginViewModel
 import com.example.daggerbikinpusing.databinding.FragmentLoginBinding
 import com.example.daggerbikinpusing.util.AppResource
@@ -23,10 +23,10 @@ class LoginFragment : DaggerFragment() {
   private var _binding: FragmentLoginBinding? = null
   private val binding get() = _binding!!
   
-  lateinit var loginViewModel: LoginViewModel
+  private lateinit var loginViewModel: LoginViewModel
   
   @Inject
-  lateinit var loginRepository: LoginRepository
+  lateinit var loginRepositoryImpl: LoginRepositoryImpl
   
   @Inject
   lateinit var sessionManager: SessionManager
@@ -48,9 +48,8 @@ class LoginFragment : DaggerFragment() {
     super.onViewCreated(view, savedInstanceState)
     
     loginViewModel = ViewModelProvider(requireActivity(), object : ViewModelProvider.Factory {
-      override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return LoginViewModel(loginRepository) as T
-      }
+      override fun <T : ViewModel> create(modelClass: Class<T>) =
+        LoginViewModel(loginRepositoryImpl) as T
     })[LoginViewModel::class.java]
     
     binding.apply {

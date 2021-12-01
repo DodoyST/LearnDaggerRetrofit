@@ -8,7 +8,5 @@ import javax.inject.Inject
 
 class LoginRepositoryImpl @Inject constructor(private val apiService: ApiService) :
   LoginRepository {
-  override suspend fun login(login: Login): Response<LoginResponse> {
-    return apiService.login(login)
-  }
+  override suspend fun login(login: Login): Response<LoginResponse> = apiService.login(login)
 }
