@@ -4,12 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.daggerbikinpusing.R
 import com.example.daggerbikinpusing.data.model.Login
-import com.example.daggerbikinpusing.data.repository.LoginRepository
 import com.example.daggerbikinpusing.data.viewmodel.LoginViewModel
 import com.example.daggerbikinpusing.databinding.FragmentLoginBinding
 import com.example.daggerbikinpusing.util.AppResource
@@ -23,10 +20,11 @@ class LoginFragment : DaggerFragment() {
   private var _binding: FragmentLoginBinding? = null
   private val binding get() = _binding!!
   
-  lateinit var loginViewModel: LoginViewModel
-  
   @Inject
-  lateinit var loginRepository: LoginRepository
+  lateinit var loginViewModel: LoginViewModel
+
+//  @Inject
+//  lateinit var loginRepository: LoginRepository
   
   @Inject
   lateinit var sessionManager: SessionManager
@@ -49,12 +47,12 @@ class LoginFragment : DaggerFragment() {
 
 //    requireActivity().appComponent.inject(this@LoginFragment)
 //    AndroidSupportInjection.inject(this@LoginFragment)
-    
-    loginViewModel = ViewModelProvider(requireActivity(), object : ViewModelProvider.Factory {
-      override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return LoginViewModel(loginRepository) as T
-      }
-    })[LoginViewModel::class.java]
+
+//    loginViewModel = ViewModelProvider(requireActivity(), object : ViewModelProvider.Factory {
+//      override fun <T : ViewModel> create(modelClass: Class<T>): T {
+//        return LoginViewModel(loginRepository) as T
+//      }
+//    })[LoginViewModel::class.java]
     
     binding.apply {
       btnLoginSubmit.setOnClickListener {
