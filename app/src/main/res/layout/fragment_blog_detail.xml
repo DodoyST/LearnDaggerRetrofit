@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".ui.screen.BlogDetailFragment">
+  
+  <ImageView
+    android:id="@+id/iv_blog_detail"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:contentDescription="@string/breaking_news_text"
+    android:scaleType="centerCrop"
+    android:src="@drawable/img_breaking_news"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0" />
+  
+  <ImageButton
+    android:id="@+id/ibtn_blog_detail_back"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:backgroundTint="@color/transparent"
+    android:contentDescription="@string/back_text"
+    android:src="@drawable/ic_back"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:tint="@color/white"
+    tools:ignore="SpeakableTextPresentCheck" />
+  
+  <ImageView
+    android:id="@+id/iv_blog_detail_image"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="32dp"
+    android:contentDescription="@string/content_text"
+    android:src="@drawable/ic_baseline_burst_mode_100"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/iv_blog_detail"
+    app:layout_constraintVertical_bias="0.0" />
+  
+  <TextView
+    android:id="@+id/tv_blog_detail_author"
+    android:layout_width="wrap_content"
+    android:layout_height="21dp"
+    android:layout_marginStart="16dp"
+    android:text="@string/admin_text"
+    android:textColor="@color/black"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="@+id/iv_blog_detail_image"
+    app:layout_constraintStart_toEndOf="@+id/iv_blog_detail_image"
+    app:layout_constraintTop_toTopOf="@+id/iv_blog_detail_image" />
+  
+  <ImageButton
+    android:id="@+id/ibtn_blog_detail_delete"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="32dp"
+    android:backgroundTint="@color/transparent"
+    android:contentDescription="@string/delete_text"
+    android:minWidth="48dp"
+    android:minHeight="48dp"
+    android:src="@drawable/ic_baseline_delete_24"
+    app:layout_constraintBottom_toBottomOf="@+id/tv_blog_detail_author"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/tv_blog_detail_author"
+    tools:ignore="SpeakableTextPresentCheck" />
+  
+  <ImageButton
+    android:id="@+id/ibtn_blog_detail_update"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/transparent"
+    android:contentDescription="@string/update_text"
+    android:minWidth="48dp"
+    android:minHeight="48dp"
+    android:src="@drawable/ic_baseline_update_24"
+    app:layout_constraintBottom_toBottomOf="@+id/ibtn_blog_detail_delete"
+    app:layout_constraintEnd_toStartOf="@+id/ibtn_blog_detail_delete"
+    app:layout_constraintTop_toTopOf="@+id/ibtn_blog_detail_delete"
+    tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+  
+  <ScrollView
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="32dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@+id/ibtn_blog_detail_delete"
+    app:layout_constraintStart_toStartOf="@+id/iv_blog_detail_image"
+    app:layout_constraintTop_toBottomOf="@+id/iv_blog_detail_image">
+    
+    <TextView
+      android:id="@+id/tv_blog_detail_content"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/content_text"
+      android:textColor="@color/black"
+      android:textSize="16sp" />
+  </ScrollView>
+  
+  <TextView
+    android:id="@+id/tv_blog_detail_title"
+    android:layout_width="wrap_content"
+    android:layout_height="25dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginBottom="16dp"
+    android:text="@string/title_text"
+    android:textColor="@color/white"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="@+id/iv_blog_detail"
+    app:layout_constraintStart_toStartOf="parent" />
+  
+  <ProgressBar
+    android:id="@+id/pb_blog_detail"
+    style="@android:style/Widget.Holo.ProgressBar.Large"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@+id/iv_blog_detail"
+    app:layout_constraintTop_toBottomOf="@+id/iv_blog_detail" />
+</androidx.constraintlayout.widget.ConstraintLayout>

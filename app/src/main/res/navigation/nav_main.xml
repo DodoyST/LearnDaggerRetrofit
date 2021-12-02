@@ -21,4 +21,15 @@
   <action
     android:id="@+id/action_global_homeFragment_to_loginFragment"
     app:destination="@id/loginFragment" />
+  <fragment
+    android:id="@+id/blogDetailFragment"
+    android:name="com.example.daggerbikinpusing.ui.screen.BlogDetailFragment"
+    android:label="fragment_blog_detail"
+    tools:layout="@layout/fragment_blog_detail" />
+  <action
+    android:id="@+id/action_global_homeFragment_to_blogDetailFragment"
+    app:destination="@id/blogDetailFragment" />
+  <action
+    android:id="@+id/action_global_blogDetailFragment_to_homeFragment"
+    app:destination="@id/homeFragment" />
 </navigation>

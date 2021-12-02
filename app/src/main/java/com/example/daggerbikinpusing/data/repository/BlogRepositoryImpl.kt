@@ -7,4 +7,5 @@ import javax.inject.Inject
 
 class BlogRepositoryImpl @Inject constructor(private val apiService: ApiService) : BlogRepository {
   override suspend fun getAllBlog(): Response<List<Blog>> = apiService.getAll()
+  override suspend fun getBlogById(id: String): Response<Blog> = apiService.getById(id)
 }

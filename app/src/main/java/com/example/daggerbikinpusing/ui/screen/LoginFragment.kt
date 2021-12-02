@@ -73,15 +73,15 @@ class LoginFragment : DaggerFragment() {
           when (it) {
             is AppResource.Success -> {
               if (it.data != null) {
-                isNotLoading()
                 sessionManager.saveAuthToken(it.data.token, etLoginUsername.text.toString())
-                formClear()
                 findNavController().navigate(R.id.action_global_loginFragment_to_homeFragment)
+                formClear()
+                isNotLoading()
               }
             }
             is AppResource.Error -> {
-              isNotLoading()
               showErrorLog()
+              isNotLoading()
             }
             is AppResource.Loading -> isLoading()
           }

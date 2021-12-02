@@ -64,7 +64,7 @@ class HomeFragment : DaggerFragment() {
     blogViewModel.getAll().observe(viewLifecycleOwner, {
       when (it) {
         is AppResource.Success -> {
-          blogAdapter = BlogAdapter(it.data!!)
+          blogAdapter = BlogAdapter(it.data!!, blogViewModel)
           binding.apply {
             rvHomeCardBlog.apply {
               layoutManager = LinearLayoutManager(requireContext())

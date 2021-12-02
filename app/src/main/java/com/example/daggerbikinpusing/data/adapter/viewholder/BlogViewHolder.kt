@@ -1,12 +1,14 @@
 package com.example.daggerbikinpusing.data.adapter.viewholder
 
 import android.view.View
-import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.daggerbikinpusing.R
 import com.example.daggerbikinpusing.data.model.Blog
+import com.example.daggerbikinpusing.data.viewmodel.BlogViewModel
 import com.example.daggerbikinpusing.databinding.CardBlogBinding
 
-class BlogViewHolder(itemView: View) :
+class BlogViewHolder(itemView: View, private val blogViewModel: BlogViewModel) :
   RecyclerView.ViewHolder(itemView) {
   
   private val binding = CardBlogBinding.bind(itemView)
@@ -24,7 +26,8 @@ class BlogViewHolder(itemView: View) :
   
   init {
     itemView.setOnClickListener {
-      Toast.makeText(itemView.context, "${binding.tvCardBlogTitle.text}", Toast.LENGTH_SHORT).show()
+      it.findNavController().navigate(R.id.action_global_homeFragment_to_blogDetailFragment)
+      blogViewModel.getById(itemBlogId)
     }
   }
 }

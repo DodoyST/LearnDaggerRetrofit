@@ -1,6 +1,7 @@
 package com.example.daggerbikinpusing.di.module
 
 import com.example.daggerbikinpusing.ui.activity.MainActivity
+import com.example.daggerbikinpusing.ui.screen.BlogDetailFragment
 import com.example.daggerbikinpusing.ui.screen.HomeFragment
 import com.example.daggerbikinpusing.ui.screen.LoginFragment
 import dagger.Module
@@ -17,4 +18,7 @@ abstract class ActivityModule {
   
   @ContributesAndroidInjector
   abstract fun contributeHomeFragment(): HomeFragment
+  
+  @ContributesAndroidInjector
+  abstract fun contributeBlogDetailFragment(): BlogDetailFragment
 }
